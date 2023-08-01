@@ -1,0 +1,18 @@
+<table class="table table-striped">
+  <thead class="table-primary">
+    <tr>
+      <th>Nome</th>
+      <th>Cognome</th>
+      <th>Matricola</th>
+      <th>Citta</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let person of people" class="tr">
+        <td>{{person.nome}}</td>
+        <td>{{person.cognome}}</td>
+        <td>{{person.matricola}}</td>
+        <td>{{person.citta}}</td>
+    </tr>
+  </tbody>
+</table>

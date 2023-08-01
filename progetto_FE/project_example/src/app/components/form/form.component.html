@@ -1,0 +1,30 @@
+<div class="title">
+  <h1>Form</h1>
+</div>
+<form [formGroup]="peopleForm" (ngSubmit)="printConsole(peopleForm.value)">
+  <div class="container-fluid">
+    <div class="rowS">
+      <mat-form-field class="example-full-width">
+        <mat-label>Nome</mat-label>
+        <input type="text" formControlName="nome" matInput />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Cognome</mat-label>
+        <input type="text" formControlName="cognome" matInput />
+      </mat-form-field>
+    </div>
+    <div class="rowS">
+      <mat-form-field class="example-full-width">
+        <mat-label>Matricola</mat-label>
+        <input type="text" formControlName="matricola" matInput />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>City</mat-label>
+        <input type="text" formControlName="citta" matInput placeholder="" />
+      </mat-form-field>
+      <div class="buttonS">
+        <button mat-raised-button type="submit" color="primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</form>

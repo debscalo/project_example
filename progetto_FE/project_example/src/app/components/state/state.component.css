@@ -1,0 +1,15 @@
+.container-fluid{
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+}
+
+
+.state{
+    text-align: center;
+}
+
+button{
+    padding: 2rem;
+    margin-left: 2rem;
+}

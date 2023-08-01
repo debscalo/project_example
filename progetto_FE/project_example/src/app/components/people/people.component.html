@@ -1,0 +1,20 @@
+<mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened class="side">
+        <ul class="nav flex-column">
+        
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#" routerLink="table">Tabella</a>
+            </li>
+            <mat-divider></mat-divider>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#" routerLink="state">Stato applicazione</a>
+            </li>
+            <mat-divider></mat-divider>
+            <li class="nav-item">
+              <a class="nav-link" href="#" routerLink="form">Form</a>
+            </li>
+            <mat-divider></mat-divider>
+        </ul>
+    </mat-drawer>
+    <mat-drawer-content><router-outlet></router-outlet></mat-drawer-content>
+  </mat-drawer-container>
