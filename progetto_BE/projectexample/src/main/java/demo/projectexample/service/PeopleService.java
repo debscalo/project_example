@@ -3,6 +3,7 @@ package demo.projectexample.service;
 import demo.projectexample.entity.PeopleEntity;
 import demo.projectexample.repository.PeopleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,8 +23,13 @@ public class PeopleService {
         return peopleRepository.findById(id);
     }
 
-    public PeopleEntity savePerson(PeopleEntity peopleEntity){
-        return peopleRepository.save(peopleEntity);
+
+    public void savePerson(PeopleEntity peopleEntity) {
+        if (getMatricolaUnique(peopleEntity.getMatricola()) == 0) {
+            peopleRepository.save(peopleEntity);
+        } else {
+            throw new DataIntegrityViolationException("Il valore della matricola deve essere univoco.");
+        }
     }
 
     public PeopleEntity updatePeople(PeopleEntity peopleEntityNew){
@@ -34,5 +40,9 @@ public class PeopleService {
 
     public void deletePerson(Long id){
         peopleRepository.deleteById(id);
+    }
+
+    public int getMatricolaUnique(int matricola){
+        return peopleRepository.getMatricolaUnique(matricola);
     }
 }

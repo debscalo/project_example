@@ -1,0 +1,64 @@
+.title h1{
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    font-size: xx-large;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+
+
+.rowS{
+    padding-top: 2rem;
+}
+
+.example-full-width{
+    padding-right: 2rem;
+}
+
+.buttonS{
+    margin-left: 12rem;
+}
+
+.head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+.container-fluid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#modify{
+    margin-right: 2rem;
+    background-color: rgb(3, 163, 11);
+    color: white;
+}
+
+
+.mat-elevation-z8{
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+.immagine{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+#img{
+    margin-bottom: 1rem;
+}
+
+
+
+  

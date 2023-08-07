@@ -3,6 +3,8 @@ package demo.projectexample.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.sql.Blob;
+
 @Entity
 @Table(name = "people")
 @NoArgsConstructor
@@ -16,6 +18,9 @@ public class PeopleEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
+
+    @Column(name = "img")
+    private byte[] img;
 
     @Column(name = "nome")
     private String nome;

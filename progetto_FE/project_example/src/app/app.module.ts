@@ -12,22 +12,37 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {ReactiveFormsModule } from '@angular/forms';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatListModule} from '@angular/material/list';
+import {MatIconModule} from '@angular/material/icon';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MatSortModule } from '@angular/material/sort';
 
-import { NavbarComponent } from './components/navbar/navbar.component';
+
 import { PeopleComponent } from './components/people/people.component';
 import { TableComponent } from './components/table/table.component';
 import { StateComponent } from './components/state/state.component';
 import { FormComponent } from './components/form/form.component';
 import { StoreModule } from '@ngrx/store';
+import { reducer } from './redux/state.reducer';
+import { OperationComponent } from './components/operation/operation.component';
+import { DialogComponent } from './components/dialog/dialog.component';
+import { ErrorDialogComponent } from './components/error-dialog/error-dialog.component';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     PeopleComponent,
     TableComponent,
     StateComponent,
-    FormComponent
+    FormComponent,
+    OperationComponent,
+    DialogComponent,
+    ErrorDialogComponent,
+    ConfirmDialogComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -41,10 +56,16 @@ import { StoreModule } from '@ngrx/store';
     MatButtonModule,
     ReactiveFormsModule,
     StoreDevtoolsModule,
-    StoreModule.forRoot({}, {})
+    MatToolbarModule,
+    MatListModule,
+    MatIconModule,
+    MatPaginatorModule,
+    MatDialogModule,
+    MatSortModule,
+    StoreModule.forRoot({})
     
   ],
-  providers: [],
+  providers: [DialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

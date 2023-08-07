@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-
-export interface State{
-    value: number;
-}
+import { State } from 'src/app/redux/state.reducer';
 
 
 @Component({

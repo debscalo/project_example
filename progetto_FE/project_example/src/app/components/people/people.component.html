@@ -1,20 +1,34 @@
-<mat-drawer-container class="example-container">
-    <mat-drawer mode="side" opened class="side">
-        <ul class="nav flex-column">
+
+  <div class="example-container">
+    <mat-toolbar color="primary" class="example-toolbar">
+      <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+      <h1 class="example-app-name">People main</h1>
+    </mat-toolbar>
+  
+    <mat-sidenav-container class="example-container"  >
+      <mat-sidenav #sidenav [mode]="'' || 'over'" class="nav">
+        <div class="head">
+          <h2 class="listS">Menu</h2>
+          <button mat-button (click)="sidenav.toggle()"><mat-icon>close</mat-icon></button>
+        </div>
+        <mat-list role="list" >
+          <mat-list-item role="listitem" routerLink="table" ><h3 class="listS">Tabella</h3></mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem" routerLink="state" ><h3 class="listS">Stato applicazione</h3></mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem" routerLink="form"><h3 class="listS">Form</h3></mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item role="listitem" routerLink="operation"><h3 class="listS">Operazioni</h3></mat-list-item>
+          <mat-divider></mat-divider>
         
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#" routerLink="table">Tabella</a>
-            </li>
-            <mat-divider></mat-divider>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#" routerLink="state">Stato applicazione</a>
-            </li>
-            <mat-divider></mat-divider>
-            <li class="nav-item">
-              <a class="nav-link" href="#" routerLink="form">Form</a>
-            </li>
-            <mat-divider></mat-divider>
-        </ul>
-    </mat-drawer>
-    <mat-drawer-content><router-outlet></router-outlet></mat-drawer-content>
-  </mat-drawer-container>
+        </mat-list>
+      
+      </mat-sidenav>
+    
+      <mat-sidenav-content><router-outlet></router-outlet>        
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+  
+
+  

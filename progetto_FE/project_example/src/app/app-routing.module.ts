@@ -4,6 +4,7 @@ import { PeopleComponent } from './components/people/people.component';
 import { TableComponent } from './components/table/table.component';
 import { StateComponent } from './components/state/state.component';
 import { FormComponent } from './components/form/form.component';
+import { OperationComponent } from './components/operation/operation.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,7 @@ const routes: Routes = [
       { path: 'table', component: TableComponent },
       { path: 'state', component: StateComponent },
       { path: 'form', component: FormComponent },
+      { path: 'operation', component: OperationComponent},
     ],
   },
 ];

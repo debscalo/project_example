@@ -3,8 +3,11 @@ package demo.projectexample.controller;
 import demo.projectexample.entity.PeopleEntity;
 import demo.projectexample.service.PeopleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.File;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,8 +30,22 @@ public class PeopleController {
     }
 
     @PostMapping("/save")
-    public PeopleEntity savePerson(@RequestBody PeopleEntity peopleEntity){
-        return peopleService.savePerson(peopleEntity);
+    public ResponseEntity<String> savePerson(
+            @RequestParam("img") MultipartFile img,
+            @RequestParam("nome") String nome,
+            @RequestParam("cognome") String cognome,
+            @RequestParam("matricola") int matricola,
+            @RequestParam("citta") String citta
+
+    ) {
+        try {
+            byte[] image = img.getBytes();
+            PeopleEntity person = new PeopleEntity(null, image, nome, cognome, matricola, citta);
+            peopleService.savePerson(person);
+            return ResponseEntity.ok("Persona salvata con successo.");
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body("Errore durante la richiesta.");
+        }
     }
 
     @PutMapping("/update")
@@ -39,5 +56,10 @@ public class PeopleController {
     @DeleteMapping("/{id}")
     public void deletePerson(@PathVariable Long id){
         peopleService.deletePerson(id);
+    }
+
+    @GetMapping("/mat/{matricola}")
+    public int getMatricolaUnique(@PathVariable int matricola){
+        return peopleService.getMatricolaUnique(matricola);
     }
 }

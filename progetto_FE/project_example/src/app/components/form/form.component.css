@@ -7,20 +7,33 @@
     padding-bottom: 2rem;
 }
 
-.container-fluid{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .rowS{
     padding-top: 2rem;
 }
 
 .example-full-width{
     padding-right: 2rem;
+    padding-left: 2rem;
 }
 
 .buttonS{
-    margin-left: 12rem;
+    display: flex;
+    justify-content: center;
 }
+
+.mat-elevation-z8{
+    padding-bottom: 2rem;
+    
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    
+}
+
+.upload{
+    padding: 3rem;
+}
+
